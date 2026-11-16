@@ -5,7 +5,7 @@ public class Cafeteria {
         int op;
 
         // Variables acumuladoras para el Reporte de Ventas (R5)
-        int totalComprasRegistradas = 0;2
+        int totalComprasRegistradas = 0;
         double acumuladoSinDescuentos = 0.0;
         double totalDescuentosOtorgados = 0.0;
         double importeTotalRecaudado = 0.0;

@@ -1,25 +1,25 @@
 import javax.swing.JOptionPane;
+import java.util.Random;
 
 public class reto3 {
     public static void main(String[] args) {
-        int numeroSecreto = 12, intentos = 0, intentosmax = 10;
+        Random ram = new Random();
+        int Nram = ram.nextInt(100) + 1; // Número aleatorio del 1 al 100
+        int N;
+        int intentos = 0; // Contador de intentos
 
-        while (intentos < intentosmax) {
-            int N = Integer.parseInt(JOptionPane.showInputDialog("Adivina el número:"));
-            intentos++;
+        do {
+            N = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número entre 1 y 100:"));
+            intentos++; // Sumamos un intento cada vez que participa
 
-            if (N < numeroSecreto) {
-                JOptionPane.showMessageDialog(null, "Te faltó, es más alto. Llevas " + intentos + " intentos.");
-            } else if (N > numeroSecreto) {
-                JOptionPane.showMessageDialog(null, "Te pasaste, es más bajo. Llevas " + intentos + " intentos.");
+            if (N > Nram) {
+                JOptionPane.showMessageDialog(null, "El número secreto es menor");
+            } else if (N < Nram) {
+                JOptionPane.showMessageDialog(null, "El número secreto es mayor");
             } else {
-                JOptionPane.showMessageDialog(null, "¡Correcto! Lo adivinaste en " + intentos + " intentos.");
-                break;
+                JOptionPane.showMessageDialog(null, "¡Correcto! Adivinaste en " + intentos + " intentos.");
             }
-        }
 
-        if (intentos >= intentosmax) {
-            JOptionPane.showMessageDialog(null, "Se te acabaron los intentos. Suerte para la próxima, chavo.");
-        }
+        } while (N != Nram);
     }
 }
