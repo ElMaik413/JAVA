@@ -31,7 +31,7 @@ public class reto4 {
                 );
             }
         } while (HPplayer > 0 &&  HPcpu > 0);
-        if (HPcpu > 0) {
+        if (HPcpu < 0) {
         JOptionPane.showMessageDialog(null, "=====VITORYYYYYYY=====");
         } else {
             JOptionPane.showMessageDialog(null, "DERROTA");
